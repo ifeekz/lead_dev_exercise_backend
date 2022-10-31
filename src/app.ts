@@ -10,7 +10,11 @@ import { AuthRoutes } from "./auth/auth.routes.config";
 import { OrdersRoutes } from "./orders/orders.routes.config";
 import debug from "debug";
 import 'dotenv/config';
-const whitelist = ["http://localhost:3000", "http://localhost:3001"];
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://olist-ecommerce-api.herokuapp.com/",
+];
 const corsOptions = {
   credentials: true,
   origin: (origin: any, callback: Function) => {
