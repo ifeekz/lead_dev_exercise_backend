@@ -13,7 +13,7 @@ import 'dotenv/config';
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://olist-ecommerce-api.herokuapp.com/",
+  "https://635f8158d10573779a18b026--clinquant-sawine-31c539.netlify.app",
 ];
 const corsOptions = {
   credentials: true,
