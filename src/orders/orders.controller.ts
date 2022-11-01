@@ -6,11 +6,11 @@ import { MongoClient } from "mongodb";
 const log: debug.IDebugger = debug("app:orders-controller");
 class OrdersController {
   async listOrders(req: express.Request, res: express.Response) {
-    const limit = Number(req.query?.limit || 20);
-    const offet = Number(req.query?.offset || 0);
-    const sort = req.query?.sort || "shipping_limit_date";
+    const limit: any = Number(req.query?.limit || 20);
+    const offet: any = Number(req.query?.offset || 0);
+    const sort: any = req.query?.sort || "shipping_limit_date";
 
-    const orders = await ordersService.list(req.user.seller_id, limit, offet);
+    const orders = await ordersService.list(req.user.seller_id, limit, offet, sort);
     return res.status(200).send(orders);
   }
 

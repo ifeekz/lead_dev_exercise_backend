@@ -29,10 +29,12 @@ class OrdersService extends DbManager implements OrdersInterface {
 
   async list(
     seller_id: string,
-    limit: number = 20,
-    offset: number = 0,
+    limit: any = 20,
+    offset: any = 0,
     sort: string = "shipping_limit_date"
   ) {
+    limit = (parseInt(limit) > 0) ? limit : 20
+    offset = (parseInt(offset) > 0) ? offset : 0;
     sort = sort === "price" ? "price" : "shipping_limit_date";
     const orders = await this.orders
       .aggregate([
